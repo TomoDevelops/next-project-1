@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+
+  height: 60px;
+  position: sticky;
+  width: 100%;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-inline: 20px;
+
+  height: 100%;
+  width: 100%;
+  max-width: 1150px;
+}
+
+.search {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 92px;
+
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  padding: 12px 16px;
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  outline: none;
+
+  line-height: 22px;
+  width: 252px;
+
+  caret-color: rgb(var(--tiktok-red-rgb));
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  gap: var(--spacingSmall);
+}
