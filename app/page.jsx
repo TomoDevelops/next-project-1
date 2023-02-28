@@ -1,17 +1,18 @@
-import Link from "next/link";
 import { Montserrat } from "next/font/google";
+
 import styles from "./page.module.css";
+import all_pokemon from "../python/data.json";
+
+import SingleCard from "@/app/components/singleCard/SingleCard";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
-export default function Home() {
+export default function ForYou() {
     return (
-        <main className={styles.main}>
-            <aside className={styles.sideNav}>
-                <Link href="/forYou">For You</Link>
-                <Link href="/following">Following</Link>
-            </aside>
-            <div className={styles.mainContent}></div>
-        </main>
+        <div className={styles.mainInsideContainer}>
+            {all_pokemon.map((pokemon) => (
+                <SingleCard pokemon={pokemon} key={pokemon.id} />
+            ))}
+        </div>
     );
 }

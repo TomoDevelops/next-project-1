@@ -1,14 +1,20 @@
-import Button from "@/components/button/Button";
-import Image from "next/image";
 import Link from "next/link";
+import {
+    UilSearch,
+    UilPlus,
+    UilEstate,
+    UilUsersAlt,
+    UilVideo,
+} from "@iconscout/react-unicons";
 
+import Button from "@/app/components/button/Button";
 import "./globals.css";
 import styles from "./layout.module.css";
 
 export const metadata = {
-    title: "Watch trending videos for you | TikTok",
+    title: "TikTok - Make Your Day",
     description:
-        "It starts on TikTok. Join the millions of viewers discovering content and creators on TikTok - available on the web or on your mobile device.",
+        "TikTok - trends start here. On a device or on the web, viewers can watch and discover millions of personalized short videos. Download the app to get started.",
 };
 
 export default function RootLayout({ children }) {
@@ -17,7 +23,7 @@ export default function RootLayout({ children }) {
             <body>
                 <header className={styles.header}>
                     <nav className={styles.navContainer}>
-                        <div className="">
+                        <div className={styles.leftContainer}>
                             <Link href="/">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -62,8 +68,8 @@ export default function RootLayout({ children }) {
                                 </svg>
                             </Link>
                         </div>
-                        <div className="">
-                            <form className={styles.search}>
+                        <div className={styles.middleContainer}>
+                            <form className={styles.searchContainer}>
                                 <input
                                     className={styles.searchInput}
                                     type="search"
@@ -71,23 +77,16 @@ export default function RootLayout({ children }) {
                                     id="search"
                                     placeholder="Search accounts and videos"
                                 />
-                                <span></span>
-                                {/* <button type="submit">
-                                    <svg
-                                        width="24"
-                                        data-e2e=""
-                                        height="24"
-                                        viewBox="0 0 48 48"
-                                        fill="rgba(255, 255, 255, .34)"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            fill-rule="evenodd"
-                                            clip-rule="evenodd"
-                                            d="M22 10C15.3726 10 10 15.3726 10 22C10 28.6274 15.3726 34 22 34C28.6274 34 34 28.6274 34 22C34 15.3726 28.6274 10 22 10ZM6 22C6 13.1634 13.1634 6 22 6C30.8366 6 38 13.1634 38 22C38 25.6974 36.7458 29.1019 34.6397 31.8113L43.3809 40.5565C43.7712 40.947 43.7712 41.5801 43.3807 41.9705L41.9665 43.3847C41.5759 43.7753 40.9426 43.7752 40.5521 43.3846L31.8113 34.6397C29.1019 36.7458 25.6974 38 22 38C13.1634 38 6 30.8366 6 22Z"
-                                        ></path>
-                                    </svg>
-                                </button> */}
+                                <span className={styles.verticalSpan}></span>
+                                <button
+                                    className={styles.searchIcon}
+                                    type="submit"
+                                >
+                                    <UilSearch
+                                        size="20"
+                                        color="rgba(255, 255, 255, 0.34)"
+                                    />
+                                </button>
                             </form>
                         </div>
                         <div className={styles.buttonContainer}>
@@ -96,6 +95,7 @@ export default function RootLayout({ children }) {
                                 width={113}
                                 height={36}
                             >
+                                <UilPlus size="20" color="#ffffffe6" />
                                 Upload
                             </Button>
                             <Button bgColor={"red"} width={100} height={36}>
@@ -104,7 +104,53 @@ export default function RootLayout({ children }) {
                         </div>
                     </nav>
                 </header>
-                {children}
+                <main className={styles.rootContainer}>
+                    <aside className={styles.sideNavRootContainer}>
+                        <div className={styles.sideNavInsideContainer}>
+                            <div>
+                                <Link className={styles.sideNavLink} href="/">
+                                    <UilEstate
+                                        size="32"
+                                        color="rgb(var(--tiktok-red-rgb))"
+                                    />
+                                    For You
+                                </Link>
+                                <Link
+                                    className={styles.sideNavLink}
+                                    href="/following"
+                                >
+                                    <UilUsersAlt
+                                        size="32"
+                                        color="rgb(var(--tiktok-red-rgb))"
+                                    />
+                                    Following
+                                </Link>
+                                <Link
+                                    className={styles.sideNavLink}
+                                    href="/live"
+                                >
+                                    <UilVideo
+                                        size="32"
+                                        color="rgb(var(--tiktok-red-rgb))"
+                                    />
+                                    LIVE
+                                </Link>
+                            </div>
+                            <div className={styles.loginContainer}>
+                                <p className={styles.loginNote}>
+                                    Log in to follow creators, like videos, and
+                                    view comments.
+                                </p>
+                                <div className={styles.loginButton}>
+                                    <Button bgColor={"outline"}>Log in</Button>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                    <div className={styles.mainContentRootContainer}>
+                        {children}
+                    </div>
+                </main>
             </body>
         </html>
     );

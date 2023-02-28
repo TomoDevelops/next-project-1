@@ -1,7 +1,7 @@
 import React from "react";
 
-function forYou() {
-    return <div>forYou</div>;
+function ForYou() {
+    return <div>ForYou</div>;
 }
 
-export default forYou;
+export default ForYou;

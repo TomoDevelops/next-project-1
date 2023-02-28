@@ -1,10 +1,16 @@
 .header {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+
+  box-shadow: 0px 1px 1px rgb(255 255 255 / 12%);
+  background: rgb(var(--background-rgb));
 
   height: 60px;
-  position: sticky;
   width: 100%;
+
+  position: fixed;
+  z-index: 1000;
 }
 
 .navContainer {
@@ -19,7 +25,16 @@
   max-width: 1150px;
 }
 
-.search {
+.leftContainer {
+  min-width: 100px;
+}
+
+.middleContainer {
+  min-width: 200px;
+  padding-inline: 8px;
+}
+
+.searchContainer {
   background-color: rgba(255, 255, 255, 0.12);
   border-radius: 92px;
 
@@ -36,13 +51,126 @@
   outline: none;
 
   line-height: 22px;
+  font-size: var(--fontSizeP4);
   width: 252px;
 
   caret-color: rgb(var(--tiktok-red-rgb));
+}
+
+.searchIcon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  padding: 11px 16px 11px 12px;
+  margin: -12px -16px -12px 0px;
+}
+
+.searchIcon:hover {
+  background-color: rgb(55, 55, 55);
+}
+
+.verticalSpan {
+  width: 1px;
+  height: 28px;
+  margin: -3px 0;
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .buttonContainer {
   display: flex;
   justify-content: space-around;
   gap: var(--spacingSmall);
+}
+
+.rootContainer {
+  margin-top: 60px;
+  width: 100vw;
+  max-width: 1150px;
+
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.sideNavRootContainer {
+  min-width: 356px;
+  position: relative;
+}
+
+.mainContentRootContainer {
+  min-height: 200vh;
+  min-width: 692px;
+  padding: 24px 0;
+}
+
+.sideNavInsideContainer {
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  z-index: 99;
+
+
+  padding: 20px 0 26px 8px;
+  width: 356px;
+  min-height: 200vh;
+}
+
+.sideNavInsideContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sideNavInsideContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sideNavInsideContainer::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.sideNavLink {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+
+  font-weight: var(--fontWeightBold);
+}
+
+.loginContainer {
+  padding: 24px 8px;
+  position: relative;
+}
+
+.loginContainer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.loginNote {
+  color: #ffffff80;
+  line-height: 22px;
+}
+
+.loginButton {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.loginButton Button {
+  font-size: var(--fontSizeP3);
+  height: 48px;
+  width: 325px;
 }

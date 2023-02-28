@@ -1,4 +1,9 @@
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
   color: var(--foreground-rgba);
   cursor: pointer;
   font-family: var(--main-font);
