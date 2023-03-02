@@ -10,6 +10,7 @@ import {
 import Button from "@/app/components/button/Button";
 import "./globals.css";
 import styles from "./layout.module.css";
+import SuggestedAccContainer from "./components/suggestedAccContainer/SuggestedAccContainer";
 
 export const metadata = {
     title: "TikTok - Make Your Day",
@@ -145,6 +146,7 @@ export default function RootLayout({ children }) {
                                     <Button bgColor={"outline"}>Log in</Button>
                                 </div>
                             </div>
+                            <SuggestedAccContainer />
                         </div>
                     </aside>
                     <div className={styles.mainContentRootContainer}>
