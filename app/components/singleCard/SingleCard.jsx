@@ -2,11 +2,13 @@ import React from "react";
 import Image from "next/image";
 
 import styles from "./singleCard.module.css";
+import Link from "next/link";
 
 function SingleCard({ pokemon }) {
     const {
         id,
         name,
+        eng_name,
         description,
         image,
         types,
@@ -36,8 +38,10 @@ function SingleCard({ pokemon }) {
         フェアリー: "fairy",
     };
     return (
-        <div className={styles.singleCardContainer}>
-            <h3 className={styles.cardName}>{name}</h3>
+        <Link href={`/${eng_name}`} className={styles.singleCardContainer}>
+            <h3 className={styles.cardName}>
+                {name} / {eng_name}
+            </h3>
             <div className={styles.singleCardInnerContainer}>
                 <Image
                     src={image.front_default}
@@ -62,7 +66,7 @@ function SingleCard({ pokemon }) {
                     ))}
                 </ul>
             </div>
-        </div>
+        </Link>
     );
 }
 

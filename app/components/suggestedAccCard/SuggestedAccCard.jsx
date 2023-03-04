@@ -4,9 +4,9 @@ import Image from "next/image";
 
 import styles from "./suggestedAccCard.module.css";
 
-function SuggestedAccCard({ name, image }) {
+function SuggestedAccCard({ name, eng_name, image }) {
     return (
-        <Link href="/" className={styles.suggestedAccContainer}>
+        <Link href={`/${eng_name}`} className={styles.suggestedAccContainer}>
             <Image
                 className={styles.suggestedAccImage}
                 src={image.front_default}
@@ -14,7 +14,9 @@ function SuggestedAccCard({ name, image }) {
                 height={40}
                 alt="Official image of Pokemon"
             />
-            <div className={styles.suggestedAccName}>{name}</div>
+            <div className={styles.suggestedAccName}>
+                {name} / {eng_name}
+            </div>
         </Link>
     );
 }
