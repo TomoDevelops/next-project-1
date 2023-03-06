@@ -1,12 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Montserrat, Source_Sans_Pro } from "next/font/google";
 import { UilSearch, UilPlus } from "@iconscout/react-unicons";
 
+import "@/app/globals.css";
 import Button from "@/app/components/button/Button";
-import "./globals.css";
-import SuggestedAccContainer from "./components/suggestedAccContainer/SuggestedAccContainer";
-import Image from "next/image";
-import SidebarNavs from "./components/sidebarNavs/sidebarNavs";
+import SuggestedAccContainer from "@/app/components/suggestedAccContainer/SuggestedAccContainer";
+import SidebarNavs from "@/app/components/sidebarNavs/sidebarNavs";
 
 export const metadata = {
   title: "TikTok - Make Your Day",
@@ -32,8 +32,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${montserrat.variable} ${source.variable} custom-scrollbar flex min-h-screen flex-col justify-start bg-neutral-900 font-montserrat text-base`}
       >
-        <header className="fixed z-50 flex h-[60px] w-full items-center justify-around bg-main shadow-header">
-          <nav className="flex h-full w-full max-w-6xl items-center justify-between px-5">
+        <header className="fixed z-30 flex h-[60px] w-full items-center justify-around bg-main shadow-header">
+          <nav className="flex h-full w-full items-center justify-between px-5">
             <div className="min-w-[100px]">
               <Link href="/">
                 <Image src="/images/logo.svg" height={42} width={118} />
@@ -68,9 +68,9 @@ export default function RootLayout({ children }) {
             </div>
           </nav>
         </header>
-        <main className="mt-[60px] flex w-screen max-w-6xl justify-between self-center">
-          <aside className="relative min-w-[356px]">
-            <div className="custom-scrollbar fixed top-[60px] bottom-0 z-40 w-[356px] overflow-y-auto overflow-x-hidden overscroll-y-contain pt-5 pr-0 pb-6 pl-2">
+        <main className="mt-[60px] flex w-screen justify-between self-center">
+          <aside className="relative min-w-[224px]">
+            <div className="custom-scrollbar fixed top-[60px] bottom-0 z-20 w-[224px] overflow-y-auto overflow-x-hidden overscroll-y-contain pt-5 pr-0 pb-6 pl-2 text-sm">
               <SidebarNavs />
               <div className="relative py-6 px-2 after:absolute after:bottom-0 after:left-2 after:right-2 after:h-px after:bg-grayTransparent after:content-['']">
                 <p className="leading-[22px] text-white text-opacity-50">
@@ -78,7 +78,7 @@ export default function RootLayout({ children }) {
                 </p>
                 <div className="mt-5 w-full">
                   <Button
-                    className="h-12 w-[325px] text-lg"
+                    className="h-12 w-[200px] text-lg"
                     bgColor={"outline"}
                   >
                     Log in
@@ -88,7 +88,7 @@ export default function RootLayout({ children }) {
               <SuggestedAccContainer />
             </div>
           </aside>
-          <div className="min-h-screen min-w-[692px] py-6 px-0">{children}</div>
+          <div>{children}</div>
         </main>
       </body>
     </html>

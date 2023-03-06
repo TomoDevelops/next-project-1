@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -22,7 +22,7 @@ function SidebarNavs() {
             pathname === "/" ? "rgb(var(--main-red-rgb))" : "#ffffffe6"
           }`}
         />
-        For You
+        Pokédex
       </Link>
       <Link
         className={`flex items-center justify-start gap-2 p-2 font-bold ${
