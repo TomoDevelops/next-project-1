@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import all_pokemon from "../../../python/data.json";
+import all_pokemon from "../../python/data.json";
 
 function getPokemonData(eng_name) {
   const pokemonIndex = all_pokemon.findIndex(
