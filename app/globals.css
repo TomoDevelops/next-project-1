@@ -2,58 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+}
+
 :root {
-  --max-width: 1150px;
-  --border-radius: 12px;
-  --main-font: 'Montserrat', sans-serif;
-
-  --foreground-rgba: 255, 255, 255, 0.9;
-  --background-rgb: 18, 18, 18;
-  --tiktok-red-rgb: 255, 59, 92;
-
-  --fontSizeH1: 96px;
-  --fontSizeH2: 72px;
-  --fontSizeH3: 56px;
-  --fontSizeH4: 48px;
-  --fontSizeH5: 32px;
-  --fontSizeH6: 24px;
-  --fontSizeH7: 18px;
-  --fontSizeP1: 24px;
-  --fontSizeP2: 18px;
-  --fontSizeP3: 16px;
-  --fontSizeP4: 14px;
-  --fontSizeP5: 12px;
-
-  --fontWeightThin: 100;
-  --fontWeightExtraLight: 200;
-  --fontWeightLight: 300;
-  --fontWeightRegular: 400;
-  --fontWeightMedium: 500;
-  --fontWeightSemiBold: 600;
-  --fontWeightBold: 700;
-  --fontWeightExtraBold: 800;
-
-
-  --borderRadiusSm: 2px;
-  --borderRadiusMd: 4px;
-  --borderRadiusLg: 8px;
-  --borderRadiusXl: 12px;
-
-  --spacingMicro: 4px;
-  --spacingTiny: 8px;
-  --spacingSmall: 16px;
-  --spacingStandard: 24px;
-  --spacingMedium: 32px;
-  --spacingLarge: 48px;
-  --spacingXLarge: 64px;
-  --spacing2XLarge: 72px;
-  --spacing3XLarge: 96px;
-
+  --main-red-rgb: 255, 59, 92;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgba: 255, 255, 255, 0.9;
     --background-rgb: 18, 18, 18;
   }
 }
@@ -62,40 +31,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: var(--main-font);
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-y: overlay;
-  position: relative;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  min-height: 100vh;
-
-  background-color: var(--background-rgb);
-  color: rgba(var(--foreground-rgba));
-  font-size: var(--fontSizeP3);
-  line-height: 1.5;
-  scroll-behavior: contain
-}
-
-body::-webkit-scrollbar {
-  width: 6px;
-}
-
-body::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-body::-webkit-scrollbar-thumb {
-  border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0.12);
 }
 
 a {

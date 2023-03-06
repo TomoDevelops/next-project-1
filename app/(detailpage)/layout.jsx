@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Montserrat, Source_Sans_Pro } from "next/font/google";
 import { UilSearch, UilPlus } from "@iconscout/react-unicons";
-
-import Button from "@/app/components/button/Button";
-import "./globals.css";
-import SuggestedAccContainer from "./components/suggestedAccContainer/SuggestedAccContainer";
 import Image from "next/image";
-import SidebarNavs from "./components/sidebarNavs/sidebarNavs";
+
+// import "./globals.css";
+import Button from "@/app/components/button/Button";
+import SuggestedAccContainer from "@/app/components/suggestedAccContainer/SuggestedAccContainer";
+import SidebarNavs from "@/app/components/sidebarNavs/SidebarNavs";
 
 export const metadata = {
   title: "TikTok - Make Your Day",
@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
         className={`${montserrat.variable} ${source.variable} custom-scrollbar flex min-h-screen flex-col justify-start bg-neutral-900 font-montserrat text-base`}
       >
         <header className="fixed z-50 flex h-[60px] w-full items-center justify-around bg-main shadow-header">
-          <nav className="flex h-full w-full max-w-6xl items-center justify-between px-5">
+          <nav className="flex h-full w-full items-center justify-between px-4 lg:px-5">
             <div className="min-w-[100px]">
               <Link href="/">
                 <Image src="/images/logo.svg" height={42} width={118} />
@@ -68,7 +68,7 @@ export default function RootLayout({ children }) {
             </div>
           </nav>
         </header>
-        <main className="mt-[60px] flex w-screen max-w-6xl justify-between self-center">
+        <main className="mt-[60px] flex w-screen justify-between self-center">
           <aside className="relative min-w-[356px]">
             <div className="custom-scrollbar fixed top-[60px] bottom-0 z-40 w-[356px] overflow-y-auto overflow-x-hidden overscroll-y-contain pt-5 pr-0 pb-6 pl-2">
               <SidebarNavs />

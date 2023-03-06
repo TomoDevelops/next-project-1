@@ -2,19 +2,17 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import styles from "./suggestedAccCard.module.css";
-
 function SuggestedAccCard({ name, eng_name, image }) {
     return (
-        <Link href={`/${eng_name}`} className={styles.suggestedAccContainer}>
+        <Link href={`/${eng_name}`} className={`flex items-center gap-2 p-2`}>
             <Image
-                className={styles.suggestedAccImage}
+                className={`bg-grayTransparent rounded-full p-1`}
                 src={image.front_default}
                 width={40}
                 height={40}
                 alt="Official image of Pokemon"
             />
-            <div className={styles.suggestedAccName}>
+            <div className={`font-semibold`}>
                 {name} / {eng_name}
             </div>
         </Link>

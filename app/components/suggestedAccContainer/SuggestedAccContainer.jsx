@@ -4,7 +4,6 @@ import React, { useState } from "react";
 
 import all_pokemon from "../../../python/data.json";
 import SuggestedAccCard from "../suggestedAccCard/SuggestedAccCard";
-import styles from "./suggestedAccContainer.module.css";
 
 const pokemonSortedByAtk = all_pokemon.sort(
     (a, b) => b.stats["こうげき"] - a.stats["こうげき"]
@@ -21,8 +20,10 @@ function SuggestedAccContainer() {
         setNumToShow((prevNumToShow) => prevNumToShow - 20);
     };
     return (
-        <div className={styles.suggestedAccContainer}>
-            <p className={styles.suggestedTitle}>Top Attack</p>
+        <div
+            className={`py-4 px-0 text-white text-opacity-90 font-semibold text-sm relative after:content-[''] after:absolute after:bottom-0 after:left-2 after:right-2 after:h-px after:bg-grayTransparent`}
+        >
+            <p className={`py-0 px-2 mb-2 text-sm`}>Top Attack</p>
             {pokemonSortedByAtk.slice(0, numToShow).map((pokemon) => (
                 <SuggestedAccCard
                     key={pokemon.id}
@@ -33,14 +34,14 @@ function SuggestedAccContainer() {
             ))}
             {numToShow < 25 ? (
                 <button
-                    className={styles.showNumButton}
+                    className={`bg-transparent outline-none border-none text-mainRed cursor-pointer py-0 px-2 mt-2`}
                     onClick={handleShowMore}
                 >
                     Show More
                 </button>
             ) : (
                 <button
-                    className={styles.showNumButton}
+                    className={`bg-transparent outline-none border-none text-mainRed cursor-pointer py-0 px-2 mt-2`}
                     onClick={handleShowLess}
                 >
                     Show Less
