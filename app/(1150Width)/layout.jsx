@@ -9,7 +9,7 @@ import SuggestedAccContainer from "@/app/components/suggestedAccContainer/Sugges
 import SidebarNavs from "@/app/components/sidebarNavs/sidebarNavs";
 
 export const metadata = {
-  title: "TikTok - Make Your Day",
+  title: "Pokédex",
   description:
     "TikTok - trends start here. On a device or on the web, viewers can watch and discover millions of personalized short videos. Download the app to get started.",
 };
@@ -36,7 +36,12 @@ export default function RootLayout({ children }) {
           <nav className="flex h-full w-full max-w-6xl items-center justify-between px-5">
             <div className="min-w-[100px]">
               <Link href="/">
-                <Image src="/images/logo.svg" height={42} width={118} />
+                <Image
+                  src="/images/logo.svg"
+                  alt="logo"
+                  height={42}
+                  width={118}
+                />
               </Link>
             </div>
             <div className="min-w-[200px] py-2">

@@ -9,7 +9,7 @@ import SuggestedAccContainer from "@/app/components/suggestedAccContainer/Sugges
 import SidebarNavs from "@/app/components/sidebarNavs/sidebarNavs";
 
 export const metadata = {
-  title: "TikTok - Make Your Day",
+  title: "Pokédex",
   description:
     "TikTok - trends start here. On a device or on the web, viewers can watch and discover millions of personalized short videos. Download the app to get started.",
 };
@@ -36,7 +36,12 @@ export default function RootLayout({ children }) {
           <nav className="flex h-full w-full items-center justify-between px-5">
             <div className="min-w-[100px]">
               <Link href="/">
-                <Image src="/images/logo.svg" height={42} width={118} />
+                <Image
+                  src="/images/logo.svg"
+                  alt="Logo"
+                  height={42}
+                  width={118}
+                />
               </Link>
             </div>
             <div className="min-w-[200px] py-2">
@@ -68,9 +73,9 @@ export default function RootLayout({ children }) {
             </div>
           </nav>
         </header>
-        <main className="mt-[60px] flex w-screen justify-between self-center">
-          <aside className="relative min-w-[224px]">
-            <div className="custom-scrollbar fixed top-[60px] bottom-0 z-20 w-[224px] overflow-y-auto overflow-x-hidden overscroll-y-contain pt-5 pr-0 pb-6 pl-2 text-sm">
+        <main className="mt-[60px] flex w-full self-center">
+          <aside className="relative min-w-[240px]">
+            <div className="custom-scrollbar fixed top-[60px] bottom-0 z-20 w-[240px] overflow-y-auto overflow-x-hidden overscroll-y-contain pt-5 pr-0 pb-6 pl-2 text-sm">
               <SidebarNavs />
               <div className="relative py-6 px-2 after:absolute after:bottom-0 after:left-2 after:right-2 after:h-px after:bg-grayTransparent after:content-['']">
                 <p className="leading-[22px] text-white text-opacity-50">
@@ -88,7 +93,7 @@ export default function RootLayout({ children }) {
               <SuggestedAccContainer />
             </div>
           </aside>
-          <div>{children}</div>
+          <div className={`w-full`}>{children}</div>
         </main>
       </body>
     </html>

@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import all_pokemon from "../../../python/data.json";
 import Button from "@/app/components/button/Button";
+import VideoContainer from "@/app/components/videoContainer/VideoContainer";
 
 function getPokemonData(eng_name) {
   const pokemonIndex = all_pokemon.findIndex(
@@ -17,12 +18,13 @@ function DetailPage({ params, searchParams }) {
 
   return (
     <div
-      className={`flex min-h-screen max-w-[1776px] flex-col gap-5 py-8 px-6`}
+      className={`flex min-h-screen max-w-[1776px] flex-auto flex-col gap-5 overflow-x-hidden py-8 px-6`}
     >
       <div className={`flex max-w-[624px] flex-col`}>
         <div className={`flex items-start justify-start gap-5`}>
           <Image
             src={pokemonData.image.front_default}
+            alt="pokemon official image"
             className={`rounded-full bg-white p-2`}
             width={120}
             height={120}
@@ -32,30 +34,28 @@ function DetailPage({ params, searchParams }) {
               <h1 className={`text-3xl`}>{pokemonData.name}</h1>
               <h2 className={`text-lg`}>{pokemonData.eng_name}</h2>
             </div>
-            <Button height={36} width={208} bgColor={"red"}>
+            <Button
+              className={`tracking-wide`}
+              height={36}
+              width={208}
+              bgColor={"red"}
+            >
               Follow
             </Button>
           </div>
         </div>
         <div className={`mt-5 flex gap-4`}>
-          <p>3 Following</p>
-          <p>10M Followers</p>
-          <p>10B Likes</p>
+          <p>HP: {pokemonData.stats["HP"]}</p>
+          <p>攻撃: {pokemonData.stats["こうげき"]}</p>
+          <p>防御: {pokemonData.stats["ぼうぎょ"]}</p>
+          <p>特攻: {pokemonData.stats["とくこう"]}</p>
+          <p>特防: {pokemonData.stats["とくぼう"]}</p>
+          <p>素早: {pokemonData.stats["すばやさ"]}</p>
         </div>
-        <p className={`mt-2 whitespace-pre-line`}>{pokemonData.description}</p>
+        <p className={`mt-3 whitespace-pre-line`}>{pokemonData.description}</p>
       </div>
-      <div>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod magni,
-        unde, enim distinctio animi at recusandae omnis, doloribus quisquam
-        asperiores nisi. Explicabo numquam ex incidunt recusandae id fugit,
-        ducimus neque consequatur in, minima porro commodi quis totam nihil
-        voluptatem assumenda ipsum delectus inventore sunt est repudiandae
-        error. Alias, aspernatur beatae similique, inventore neque odit ut ipsum
-        consequatur, ducimus enim fugit corporis corrupti ipsa sint obcaecati
-        illum aperiam molestias rem aliquam excepturi necessitatibus? Labore
-        voluptates fuga, placeat error dignissimos molestiae dolorem et. Impedit
-        odio quisquam, in accusamus temporibus quidem beatae error et eius
-        repellat similique perspiciatis sapiente, maxime repudiandae quos nulla.
+      <div className={`w-full`}>
+        <VideoContainer pokemon={pokemonData.name} />
       </div>
     </div>
   );

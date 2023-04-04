@@ -6,7 +6,10 @@ export default function ForYou() {
   return (
     <div className="w-[692px]">
       {all_pokemon.map((pokemon) => (
-        <SingleCard pokemon={pokemon} key={pokemon.id} />
+        <SingleCard
+          pokemon={pokemon}
+          key={`${pokemon.id}+${Math.random() * 10}`}
+        />
       ))}
     </div>
   );

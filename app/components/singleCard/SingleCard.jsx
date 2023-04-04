@@ -40,7 +40,12 @@ function SingleCard({ pokemon }) {
       className={`relative flex max-w-[692px] flex-col items-start gap-3 py-5 px-0 after:absolute after:left-0 after:bottom-0 after:h-px after:w-full after:scale-y-50 after:bg-grayTransparent after:content-[""]`}
     >
       <div className={`flex items-start justify-center gap-3`}>
-        <Image src="/images/masterball.png" width={50} height={50} />
+        <Image
+          src="/images/masterball.png"
+          alt="masterball logo"
+          width={50}
+          height={50}
+        />
         <div>
           <h3 className={`text-lg`}>{name}</h3>
           <ul className={`flex items-center justify-center gap-2`}>
@@ -68,7 +73,7 @@ function SingleCard({ pokemon }) {
         <div>{description}</div>
         <ul>
           {abilities.map((ability) => (
-            <li key={`${name}+${ability}`}>{ability}</li>
+            <li key={`${name}+${ability}+${Math.random() * 10}`}>{ability}</li>
           ))}
         </ul>
       </Link>
